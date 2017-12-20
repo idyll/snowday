@@ -1,0 +1,37 @@
+use Mix.Config
+config :snowday, SnowdayWeb.Endpoint,
+  on_init: {SnowdayWeb.Endpoint, :load_from_system_env, []},
+  https: [
+    port: 4000,
+    certfile: "../../../../priv/server.pem",
+    keyfile: "../../../../priv/server.key",
+    versions: [:"tlsv1.2"],
+    ciphers: ["ECDHE-ECDSA-AES256-GCM-SHA384","ECDHE-RSA-AES256-GCM-SHA384",
+      "ECDHE-ECDSA-AES256-SHA384","ECDHE-RSA-AES256-SHA384", "ECDHE-ECDSA-DES-CBC3-SHA",
+      "ECDH-ECDSA-AES256-GCM-SHA384","ECDH-RSA-AES256-GCM-SHA384","ECDH-ECDSA-AES256-SHA384",
+      "ECDH-RSA-AES256-SHA384","DHE-DSS-AES256-GCM-SHA384","DHE-DSS-AES256-SHA256",
+      "AES256-GCM-SHA384","AES256-SHA256","ECDHE-ECDSA-AES128-GCM-SHA256",
+      "ECDHE-RSA-AES128-GCM-SHA256","ECDHE-ECDSA-AES128-SHA256","ECDHE-RSA-AES128-SHA256",
+      "ECDH-ECDSA-AES128-GCM-SHA256","ECDH-RSA-AES128-GCM-SHA256","ECDH-ECDSA-AES128-SHA256",
+      "ECDH-RSA-AES128-SHA256","DHE-DSS-AES128-GCM-SHA256","DHE-DSS-AES128-SHA256",
+      "AES128-GCM-SHA256","AES128-SHA256","ECDHE-ECDSA-AES256-SHA",
+      "ECDHE-RSA-AES256-SHA","DHE-DSS-AES256-SHA","ECDH-ECDSA-AES256-SHA",
+      "ECDH-RSA-AES256-SHA","AES256-SHA","ECDHE-ECDSA-AES128-SHA",
+      "ECDHE-RSA-AES128-SHA","DHE-DSS-AES128-SHA","ECDH-ECDSA-AES128-SHA",
+      "ECDH-RSA-AES128-SHA","AES128-SHA"],
+    secure_renegotiate: true,
+    reuse_sessions: true,
+    honor_cipher_order: true,
+    max_connections: :infinity
+  ],
+  handler: Phoenix.Endpoint.Cowboy2Handler,
+  http: [port: 4001],
+  url: [scheme: "https", host: "snowday.phx.sh", port: 4000],
+  force_ssl: [hsts: true],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  secret_key_base: "gVtRsXqHrCisxxRdc1uh1f1/n0aMBo/BjxyfIs/tajLlGPBF6hR6Y3QbuVl5fWwB",
+  server: true,
+  root: ".",
+  version: Mix.Project.config()[:version]
+
+config :logger, level: :debug

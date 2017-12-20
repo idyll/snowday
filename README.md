@@ -1,5 +1,10 @@
 # Snowday
 
+First you will need elixir and erlang installed. Install them with brew:
+
+ * Install Erlang: `brew install erlang`
+ * Install Elixir: `brew install elixir `
+
 To start the test Phoenix server:
 
   * Install dependencies with `mix deps.get`

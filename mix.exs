@@ -40,7 +40,7 @@ defmodule Snowday.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowlib, "~> 2.0", override: true},
-      {:cowboy, "~> 2.0", override: true}
+      {:cowboy, github: "ninenines/cowboy", branch: "master", override: true}
     ]
   end
 

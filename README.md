@@ -8,6 +8,11 @@ You will notice the page loads just fine in:
   - Firefox
   - cURL
 
+I have added a fifth test that has identical HTML to test 1 but doesn't use templates or views to render the page.
+Instead it is a giant heredoc.
+
+It works.
+
 ## To Reproduce
 
 First you will need elixir and erlang installed. Install them with brew:
@@ -29,6 +34,7 @@ You will notice that in Safari, the following URLs work:
 
  - https://snowday.phx.sh:4000/test/three
  - https://snowday.phx.sh:4000/test/four
+ - https://snowday.phx.sh:4000/test/five
 
 but the following ones don't:
 

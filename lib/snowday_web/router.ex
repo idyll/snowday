@@ -19,6 +19,7 @@ defmodule SnowdayWeb.Router do
     get "/test/two", PageController, :test_two
     get "/test/three", PageController, :test_three
     get "/test/four", PageController, :test_four
+    get "/test/five", PageController, :test_five
     get "/", PageController, :index
   end
 

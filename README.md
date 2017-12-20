@@ -1,4 +1,14 @@
 # Snowday
+## Summary
+
+This project is to demonstrate a bug in Safari where loading a webpage over H2 will fail if the page is over a certain length.
+
+You will notice the page loads just fine in:
+  - Chrome
+  - Firefox
+  - cURL
+
+## To Reproduce
 
 First you will need elixir and erlang installed. Install them with brew:
 

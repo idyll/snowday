@@ -34,13 +34,13 @@ defmodule Snowday.Mixfile do
   defp deps do
     [
       {:phoenix, github: "phoenixframework/phoenix", branch: "master", override: true},
-      {:plug, github: "elixir-plug/plug", branch: "master", override: true},
+      {:plug, github: "idyll/plug", branch: "early-hints", override: true},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowlib, "~> 2.0", override: true},
-      {:cowboy, github: "ninenines/cowboy", branch: "master", override: true}
+      {:cowboy, "~> 2.3", override: true}
     ]
   end
 

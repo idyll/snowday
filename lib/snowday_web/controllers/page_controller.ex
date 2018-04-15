@@ -6,6 +6,12 @@ defmodule SnowdayWeb.PageController do
   end
 
   def test_one(conn, params) do
+    conn =
+    Plug.Conn.inform(conn, 103, [{"link", "</css/app.css>; rel=preload; as=style"}])
+  #  |> Plug.Conn.inform(103, [{"link", "</js/app.js>; rel=preload; as=script"}])
+
+    conn = Plug.Conn.put_resp_header(conn, "link", "</css/app.css>; rel=preload; as=style")
+
     render conn, "test_one.html", %{}
   end
   def test_two(conn, params) do
